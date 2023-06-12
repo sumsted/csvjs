@@ -34,10 +34,8 @@ export default class GoCsv {
             if(i===0){
                 csvData += Object.keys(csvObjects[i]).map(header => {
                     if (typeof header === 'string') {
-                      // Escape single and double quotes by doubling them
                       header = header.replace(/"/g, '""');
                       if (header.includes(',') || header.includes('"')) {
-                        // Enclose the header in double quotes if it contains a comma or double quote
                         header = `"${header}"`;
                       }
                     }
